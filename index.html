@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parcel Data API - Parcel data and tiles for Chicago, San Francisco, NYC, and more </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+    body {
+      font-family: Open Sans, Helvetica, 'Helvetica Neue';
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+    }
+
+    .head {
+      background: url('background.jpg') no-repeat center bottom;
+      background-size: 100%;
+      color: #fff;
+      padding: 75px 0;
+    }
+    .head-txt {
+      background: #337ab7;
+      color: #fff;
+      margin-bottom: 10px;
+      padding: 10px 0 20px;
+      text-align: center
+    }
+
+    .panel-primary,
+    .panel-heading {
+      border-radius: 0!important;
+      background-image: none!important;
+    }
+
+    .parcel-outlines {
+      height: 150px;
+      background: url('outlines.jpg') no-repeat center -100px;
+      background-size: 100%;
+    }
+
+    .json {
+      height: 150px;
+      background: url('json.png') no-repeat center -50px;
+      background-size: 100%;
+    }
+
+
+    .signup .col-md-12 {
+      background: url('background.jpg') no-repeat center bottom;
+      background-size: auto 100%;
+      padding: 15px 0;
+    }
+
+    #sec-thanks,
+    form {
+      width: 500px;
+      padding: 10px 50px 30px;
+      margin: 0px auto;
+      border: 1px solid #333;
+      background: #fff;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 2px;
+      width: 100%;
+    }
+
+    form input {
+      width: 300px;
+    }
+
+    .foot p {
+      margin-top: 50px;
+      color: #666;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    #sec-thanks {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="head">
+  <div style="width:750px; margin: 0px auto;">
+    <div class="container-fluid">
+    </div>
+  </div>
+</div>
+
+<div class="head-txt">
+  <div style="width:750px; margin: 0px auto;">
+    <div class="container-fluid">
+      <h1>Parcel Data APIs</h1>
+    </div>
+  </div>
+</div>
+
+
+<div style="width:750px; margin: 0px auto;">
+<div class="container-fluid">
+
+  <h3>Data ready to integrate into any app.<br> Wide coverage of major US metro areas.</h3>
+
+  <p>Parcel outlines are the organizing element for real estate, construction, policy, and more. Let us connect you to the data you need, so you can avoid scouring dozens of government websites, converting obscure formats.</p>
+
+  <p>We also manage a scalable infrastructure that makes it fast and easy to
+  get data on one or thousands of parcels, styled as you need or delievred
+  as raw data via a RESTful JSON API.</p>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><strong>Styled map tiles</strong></div>
+        <div class="panel-body">
+          <div class="parcel-outlines"></div>
+          <p>Parcel outlines as tiles, rendered on-demand with one-line
+          integrations with Google or Leaflet-based maps.</p>
+
+          <p>Bring your own styles: our advanced rendering tools
+          generate tiles so you can stay on-brand.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Data API</div>
+        <div class="panel-body">
+          <div class="json"></div>
+          <p>GeoJSON with parcle outlines, address information, and parcel PIN.</p>
+
+          <p>Display this GeoJSON directly on Google or Leaflet maps, or access
+          it in bulk to power parcel data-driven applications. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row signup">
+    <div class="col-md-12">
+      <div id="sec-thanks">
+        <h2>Thank you! We will get back to you shortly.</h2>
+      </div>
+      <div id="sec-form">
+        <form action="" id="signup-form" class="pure-form pure-form-stacked">
+          <h2>Get started</h2>
+
+          <fieldset>
+            <legend><p>Fill out your contact details to speak with a representative, or call us at<br> 1 (866) 944-4468.</p></legend>
+            <div class="req hide" id="req-message">Oops, you're missing some required fields.</div>
+
+            <div><label for="form-name">Name</label>
+            <input id="form-name" name="cm-name" type="text" required /></div>
+
+            <div><label for="form-email">Email</label>
+            <input id="form-email" name="cm-puyhlu-puyhlu" type="email" required /></div>
+
+            <div><label for="form-phone">Phone number</label>
+            <input id="form-phone" name="cm-f-udtlti" type="text" /></div>
+
+            <div><label for="form-region">Region needed</label>
+            <input id="form-region" name="cm-f-udtltt" type="text" required /></div>
+
+            <br>
+            <button id="submit" type="submit" class="btn btn-primary">Contact us</button>
+          </fieldset>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row foot">
+    <div class="col-md-12">
+    <p>
+      Contact us at 1 (866) 944-4468.<br>
+      Photo: Jeff Turner
+    </p>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39867070-8', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <script src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  <iframe id="cm" src="cmform.html" width="0" height="0" hidden></iframe>
+  <script type="text/javascript">
+    (function($, ga) {
+      'use strict';
+      $(document).ready(function() {
+        $(':input').blur(function () {
+          if($(this).val().length > 0) {
+            ga('send', 'event', 'field', 'filled', $(this).attr('id'));
+          }
+          else {
+            ga('send', 'event', 'field', 'skipped', $(this).attr('id'));
+          }
+        });
+
+        // Collect and submit entries from the form.
+        $('#signup-form').submit(function (e) {
+          e.preventDefault();
+
+          $('#form-submit').val('Submitting...');
+
+          // Validation
+          $('#req-message').hide();
+          var valid = true;
+          $('input[required="true"]').each(function () {
+            var val = $(this).val();
+            if (!val) {
+              $(this).addClass('missing');
+              valid = false;
+            }else {
+              $(this).removeClass('missing');
+            }
+          });
+
+          if (!valid) {
+            $('#req-message').show();
+            $('#form-submit').val('Submit');
+            return;
+          }
+
+          // Submit signup info to Campaign Monitor.
+          var $cm = $(window.frames[0].document);
+          $cm.find('#hidden-name').val($('#form-name').val());
+          $cm.find('#hidden-email').val($('#form-email').val());
+          $cm.find('#hidden-phone').val($('#form-phone').val());
+          $cm.find('#hidden-region').val($('#form-region').val());
+
+          $cm.find('#hidden-form').submit();
+
+          $('#sec-form').slideUp(500, function () {
+            $('#sec-thanks').slideDown(200);
+          });
+
+          // Record an analytics event
+          ga('send', 'event', 'form', 'submit');
+        });
+
+      });
+    }(window.jQuery, window.ga));
+  </script>
+
+</body>
+</html>
